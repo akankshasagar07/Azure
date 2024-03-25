@@ -7,8 +7,8 @@ param (
 
 $deploymentName = "Multi-sub-deployment"
 $deploymentLocation = "eastus2"
-$templateFile = ".\ARM-Templates\storage-Account\azuredeploy.json"
-$templateParameterFile = ".\ARM-Templates\storage-Account\azuredeploy.parameters.json"
+$templateFile = ".\ARM-Templates\storage-account\azuredeploy.json"
+$templateParameterFile = ".\ARM-Templates\storage-account\azuredeploy.parameters.json"
 #$templateFile = "$env:SYSTEM_DEFAULTWORKINGDIRECTORY/_EpturaAZLHtest-CI/drop/s/multi-subscription-deployment/ARM-Templates/storage-account/azuredeploy.json"
 #$templateParameterFile = "$env:SYSTEM_DEFAULTWORKINGDIRECTORY/_EpturaAZLHtest-CI/drop/s/multi-subscription-deployment/ARM-Templates/storage-account/azuredeploy.parameters.json"
 # If you have a set of subs that never should have deployments
