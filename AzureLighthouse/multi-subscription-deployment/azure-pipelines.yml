@@ -6,7 +6,7 @@ variables:
   vmImageName: 'windows-2019'
 
   # service connection (azure)
-  azureServiceConnection: 'Azure Lighthouse service connection name'
+  azureServiceConnection: 'Condeco-tenant-connection'
 
   # you can chose to add this in the GUI
   customerSubscriptionId: 'ALL'
