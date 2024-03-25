@@ -2,7 +2,7 @@ trigger:
 - master
 
 variables:
-  # Agent VM image name
+  # Agent VM image name 
   vmImageName: 'windows-2019'
 
   # service connection (azure)
@@ -44,7 +44,7 @@ stages:
             steps:
             - task: AzurePowerShell@4
               displayName: 'Demo storage account'
-              enabled: false
+              enabled: true
               inputs:
                 azureSubscription: '$(azureServiceConnection)'
                 ScriptType: 'FilePath'
