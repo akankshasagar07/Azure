@@ -1,2 +1,0 @@
-# Azure
-Azure LightHouse Deployment
