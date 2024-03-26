@@ -1,10 +1,10 @@
 [CmdletBinding()]
 param (
-    [Parameter()]
+    [Parameter(Mandatory = $true)]
     [string]
-    $subscriptionId
+    $subscriptionId,
 
-    [Parameter()]
+    [Parameter(Mandatory = $true)]
     [string]
     $workingDirectory
 )
