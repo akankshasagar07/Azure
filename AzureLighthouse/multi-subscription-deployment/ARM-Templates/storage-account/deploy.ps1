@@ -11,8 +11,8 @@ Write-Host "Subscription ID: $subscriptionId"
 
 $deploymentName = "Multi-sub-deployment"
 $deploymentLocation = "eastus2"
-$templateFile = ".\ARM-Templates\storage-account\azuredeploy.json"
-$templateParameterFile = ".\ARM-Templates\storage-account\azuredeploy.parameters.json"
+$templateFile = ".\_EpturaAZLHtest-CI-NEW\drop\ARM-Templates\storage-account\azuredeploy.json"
+$templateParameterFile = ".\_EpturaAZLHtest-CI-NEW/drop\ARM-Templates\storage-account\azuredeploy.parameters.json"
 #$templateFile = Join-Path -Path $workingDirectory -ChildPath "multi-subscription-deployment/ARM-Templates/storage-account/azuredeploy.json"
 #$templateParameterFile = Join-Path -Path $workingDirectory -ChildPath "multi-subscription-deployment/ARM-Templates/storage-account/azuredeploy.parameters.json"
 
