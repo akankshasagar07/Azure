@@ -16,7 +16,7 @@ $templateParameterFile = ".\ARM-Templates\storage-account\azuredeploy.parameters
 #$templateFile = Join-Path -Path $workingDirectory -ChildPath "multi-subscription-deployment/ARM-Templates/storage-account/azuredeploy.json"
 #$templateParameterFile = Join-Path -Path $workingDirectory -ChildPath "multi-subscription-deployment/ARM-Templates/storage-account/azuredeploy.parameters.json"
 
-Write-Host "Current working directory: $(Get-Location)"
+Write-Output "Current working directory: $(Get-Location)"
 
 #$templateFile = "$env:SYSTEM_DEFAULTWORKINGDIRECTORY/_EpturaAZLHtest-CI/drop/s/multi-subscription-deployment/ARM-Templates/storage-account/azuredeploy.json"
 #$templateParameterFile = "$env:SYSTEM_DEFAULTWORKINGDIRECTORY/_EpturaAZLHtest-CI/drop/s/multi-subscription-deployment/ARM-Templates/storage-account/azuredeploy.parameters.json"
@@ -36,7 +36,9 @@ if ($subscriptionId -eq "ALL") {
         
         $subscriptionId = $subscription.id
         Set-AzContext -SubscriptionId $subscriptionId
-
+        
+        write-output $templateFile
+        write-output $templateParameterFile
         New-AzSubscriptionDeployment -Name $deploymentName -Location $deploymentLocation `
             -TemplateParameterFile $templateParameterFile -TemplateFile $templateFile
     }
