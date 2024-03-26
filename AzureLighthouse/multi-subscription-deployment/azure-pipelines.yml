@@ -58,3 +58,13 @@ stages:
                 azurePowerShellVersion: 'LatestVersion'
                 workingDirectory: '$(Pipeline.Workspace)/drop/'
                 pwsh: true
+            # - task: AzurePowerShell@4
+            #   displayName: 'Demo storage account'
+            #   inputs:
+            #     azureSubscription: '$(azureServiceConnection)'
+            #     ScriptType: 'FilePath'
+            #     ScriptPath: '$(Pipeline.Workspace)/drop/ARM-Templates/storage-account/deploy.ps1'
+            #     ScriptArguments: '-subscriptionId $(customerSubscriptionId) -workingDirectory $(System.DefaultWorkingDirectory)'
+            #     azurePowerShellVersion: 'LatestVersion'
+            #     workingDirectory: '$(Pipeline.Workspace)/drop/'
+            #     pwsh: true

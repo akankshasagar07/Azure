@@ -3,6 +3,10 @@ param (
     [Parameter()]
     [string]
     $subscriptionId
+
+    # [Parameter()]
+    # [string]
+    # $workingDirectory
 )
 
 Write-Host "Debug Information:"
@@ -13,6 +17,8 @@ $templateFile = ".\ARM-Templates\storage-Account\azuredeploy.json"
 $templateParameterFile = ".\ARM-Templates\storage-Account\azuredeploy.parameters.json"
 
 Write-Host "Current working directory: $(Get-Location)"
+$templateFile = ".\ARM-Templates\storage-account\azuredeploy.json"
+$templateParameterFile = ".\ARM-Templates\storage-account\azuredeploy.parameters.json"
 #$templateFile = "$env:SYSTEM_DEFAULTWORKINGDIRECTORY/_EpturaAZLHtest-CI/drop/s/multi-subscription-deployment/ARM-Templates/storage-account/azuredeploy.json"
 #$templateParameterFile = "$env:SYSTEM_DEFAULTWORKINGDIRECTORY/_EpturaAZLHtest-CI/drop/s/multi-subscription-deployment/ARM-Templates/storage-account/azuredeploy.parameters.json"
 # If you have a set of subs that never should have deployments
