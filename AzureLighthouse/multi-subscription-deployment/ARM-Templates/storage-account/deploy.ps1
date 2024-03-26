@@ -1,22 +1,20 @@
 [CmdletBinding()]
 param (
-    [Parameter(Mandatory = $true)]
-    [string]$subscriptionId,
-
-    [Parameter(Mandatory = $true)]
-    [string]$workingDirectory
+    [Parameter()]
+    [string]
+    $subscriptionId
 )
 
 Write-Host "Debug Information:"
 Write-Host "Subscription ID: $subscriptionId"
-Write-Host "Working Directory: $workingDirectory"
+#Write-Host "Working Directory: $workingDirectory"
 
 $deploymentName = "Multi-sub-deployment"
 $deploymentLocation = "eastus2"
-# $templateFile = ".\ARM-Templates\storage-Account\azuredeploy.json"
-# $templateParameterFile = ".\ARM-Templates\storage-Account\azuredeploy.parameters.json"
-$templateFile = Join-Path -Path $workingDirectory -ChildPath "multi-subscription-deployment/ARM-Templates/storage-account/azuredeploy.json"
-$templateParameterFile = Join-Path -Path $workingDirectory -ChildPath "multi-subscription-deployment/ARM-Templates/storage-account/azuredeploy.parameters.json"
+$templateFile = ".\multi-subscription-deployment\ARM-Templates\storage-Account\azuredeploy.json"
+$templateParameterFile = ".\multi-subscription-deployment\ARM-Templates\storage-Account\azuredeploy.parameters.json"
+#$templateFile = Join-Path -Path $workingDirectory -ChildPath "multi-subscription-deployment/ARM-Templates/storage-account/azuredeploy.json"
+#$templateParameterFile = Join-Path -Path $workingDirectory -ChildPath "multi-subscription-deployment/ARM-Templates/storage-account/azuredeploy.parameters.json"
 
 Write-Host "Current working directory: $(Get-Location)"
 
