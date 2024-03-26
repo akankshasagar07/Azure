@@ -8,11 +8,12 @@ param (
 Write-Host "Debug Information:"
 Write-Host "Subscription ID: $subscriptionId"
 #Write-Host "Working Directory: $workingDirectory"
+$dirContents = Get-ChildItem -Path .
 
 $deploymentName = "Multi-sub-deployment"
 $deploymentLocation = "eastus2"
-$templateFile = ".\azuredeploy.json"
-$templateParameterFile = ".\azuredeploy.parameters.json"
+$templateFile = "$(Get-Location)\ARM-Templates\storage-account\azuredeploy.json"
+$templateParameterFile = "$(Get-Location)\ARM-Templates\storage-account\azuredeploy.parameters.json"
 #$templateFile = Join-Path -Path $workingDirectory -ChildPath "multi-subscription-deployment/ARM-Templates/storage-account/azuredeploy.json"
 #$templateParameterFile = Join-Path -Path $workingDirectory -ChildPath "multi-subscription-deployment/ARM-Templates/storage-account/azuredeploy.parameters.json"
 
@@ -39,6 +40,7 @@ if ($subscriptionId -eq "ALL") {
         
         write-output $templateFile
         write-output $templateParameterFile
+        Write-Output $dirContents
         New-AzSubscriptionDeployment -Name $deploymentName -Location $deploymentLocation `
             -TemplateParameterFile $templateParameterFile -TemplateFile $templateFile
     }
