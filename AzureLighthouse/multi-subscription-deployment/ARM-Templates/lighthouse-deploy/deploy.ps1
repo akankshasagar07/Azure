@@ -13,8 +13,8 @@ Write-Host "Subscription ID: $subscriptionId"
 $deploymentName = "Multi-sub-deployment"
 $deploymentLocation = "eastus2"
 
-$templateFile = "${env:SYSTEM_DEFAULTWORKINGDIRECTORY}/_EpturaAZLHtest-CI-NEW/drop/ARM-Templates/storage-account/azuredeploy.json"
-$templateParameterFile = "${env:SYSTEM_DEFAULTWORKINGDIRECTORY}/_EpturaAZLHtest-CI-NEW/drop/ARM-Templates/storage-account/azuredeploy.parameters.json"
+$templateFile = "${env:SYSTEM_DEFAULTWORKINGDIRECTORY}/_EpturaAZLHtest-CI-NEW/drop/ARM-Templates/lighthouse-deploy/azuredeploy.json"
+$templateParameterFile = "${env:SYSTEM_DEFAULTWORKINGDIRECTORY}/_EpturaAZLHtest-CI-NEW/drop/ARM-Templates/lighthouse-deploy/azuredeploy.parameters.json"
 
 
 Write-Output "Current working directory: $(Get-Location)"
