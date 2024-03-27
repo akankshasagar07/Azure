@@ -8,7 +8,7 @@ param (
 Write-Host "Debug Information:"
 Write-Host "Subscription ID: $subscriptionId"
 #Write-Host "Working Directory: $workingDirectory"
-$dirContents = Get-ChildItem -Path .
+$dirContents = Get-ChildItem -Path "$(Get-Location)"
 
 $deploymentName = "Multi-sub-deployment"
 $deploymentLocation = "eastus2"
