@@ -8,12 +8,15 @@ param (
 Write-Host "Debug Information:"
 Write-Host "Subscription ID: $subscriptionId"
 #Write-Host "Working Directory: $workingDirectory"
-$dirContents = Get-ChildItem -Path "$(Get-Location)"
+#$dirContents = Get-ChildItem -Path "$(Get-Location)"
 
 $deploymentName = "Multi-sub-deployment"
 $deploymentLocation = "eastus2"
-$templateFile = "$(Get-Location)\ARM-Templates\storage-account\azuredeploy.json"
-$templateParameterFile = "$(Get-Location)\ARM-Templates\storage-account\azuredeploy.parameters.json"
+# $templateFile = ".\ARM-Templates\storage-account\azuredeploy.json"
+# $templateParameterFile = ".\ARM-Templates\storage-account\azuredeploy.parameters.json"
+$templateFile = "$(System.DefaultWorkingDirectory)/_EpturaAZLHtest-CI-NEW/drop/ARM-Templates/storage-account/azuredeploy.json"
+$templateParameterFile = "$(System.DefaultWorkingDirectory)/_EpturaAZLHtest-CI-NEW/drop/ARM-Templates/storage-account/azuredeploy.parameters.json"
+
 #$templateFile = Join-Path -Path $workingDirectory -ChildPath "multi-subscription-deployment/ARM-Templates/storage-account/azuredeploy.json"
 #$templateParameterFile = Join-Path -Path $workingDirectory -ChildPath "multi-subscription-deployment/ARM-Templates/storage-account/azuredeploy.parameters.json"
 
@@ -38,8 +41,10 @@ if ($subscriptionId -eq "ALL") {
         $subscriptionId = $subscription.id
         Set-AzContext -SubscriptionId $subscriptionId
         
-        write-output $templateFile
-        write-output $templateParameterFile
+
+        Write-Host "Template file path: $templateFile"
+        Write-Host "Parameter file path: $templateParameterFile"
+
         Write-Output $dirContents
         New-AzSubscriptionDeployment -Name $deploymentName -Location $deploymentLocation `
             -TemplateParameterFile $templateParameterFile -TemplateFile $templateFile
