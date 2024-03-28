@@ -22,13 +22,7 @@
                     "principalId": "2dad2758-e5e4-4d59-917b-612d718f0f21",
                     "principalIdDisplayName": "EpturaTestOwner1",
                     "roleDefinitionId": "b24988ac-6180-42a0-ab88-20f7382dd24c"
-                },
-                {
-                    "principalId": "2dad2758-e5e4-4d59-917b-612d718f0f21",
-                    "principalIdDisplayName": "EpturaTestOwner1",
-                    "roleDefinitionId": "e307426c-f9b6-4e81-87de-d99efb3c32bc"
                 }
-
             ]
         }
     }
